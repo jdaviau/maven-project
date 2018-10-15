@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                 echo "PATH is: $PATH"
-                sh "docker build . --group-add docker -t tomcatwebapp:${env.BUILD_ID}"
+                sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
             }
         }
     }
